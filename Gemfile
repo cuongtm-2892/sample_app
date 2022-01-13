@@ -3,18 +3,20 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.0"
 
+gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "jbuilder", "~> 2.7"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.4"
+gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry", "~> 0.14.0"
 end
 
 group :development do
@@ -35,3 +37,5 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
 end
+
+gem "config"
