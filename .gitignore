@@ -32,6 +32,7 @@
 /public/packs-test
 /node_modules
 /yarn-error.log
+/test
 yarn-debug.log*
 .yarn-integrity
 .framgia-ci-reports/
