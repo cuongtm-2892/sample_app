@@ -10016,3 +10016,1110 @@ Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-18 11:10:06 
   
 ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
   
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT GET_LOCK('661840412039056215', 0)[0m
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddRememberDigestToUsers (20220119025355)
+  [1m[35m (62.4ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_digest` varchar(255)[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220119025355')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('661840412039056215')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:01:24 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 68.5ms | Allocations: 9073)
+  Rendered layouts/_shim.html.erb (Duration: 0.8ms | Allocations: 83)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 27.2ms | Allocations: 3682)
+  Rendered layouts/_footer.html.erb (Duration: 2.0ms | Allocations: 437)
+  Rendered layout layouts/application.html.erb (Duration: 579.2ms | Allocations: 113904)
+Completed 200 OK in 623ms (Views: 583.8ms | ActiveRecord: 4.8ms | Allocations: 120683)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:01:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:01:30 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1317)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 1152)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 11119)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.3ms | Allocations: 12675)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:01:30 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:01:32 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 3.3ms | Allocations: 8428)
+
+
+  
+NoMethodError (undefined method `remember_token=' for #<User:0x00007fe29961f0e8>
+Did you mean?  remember):
+  
+app/models/user.rb:31:in `remember'
+app/helpers/sessions_helper.rb:20:in `remember'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:03:55 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 320)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 7.1ms | Allocations: 1038)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 9862)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.8ms | Allocations: 10813)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:03:55 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-19 10:03:56 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1432)
+  Rendered layouts/_shim.html.erb (Duration: 0.6ms | Allocations: 5)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1047)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 10980)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.3ms | Allocations: 12447)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:03:57 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/users" for 127.0.0.1 at 2022-01-19 10:04:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Manh Cuong", "email"=>"cuongtm.it@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.it@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (14.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('Manh Cuong', 'cuongtm.it@gmail.com', '2022-01-19 03:04:08.767637', '2022-01-19 03:04:08.767637', '$2a$12$jbHRBAeeKi8u7Vic9nEzqe3pQuVxGESxAy1ZMqLBgVuCG3f0mDZI.')[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://localhost:3000/en/users/2
+Completed 302 Found in 254ms (ActiveRecord: 22.6ms | Allocations: 4057)
+
+
+Started GET "/en/users/2" for 127.0.0.1 at 2022-01-19 10:04:08 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 158)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1051)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 9718)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 1.0ms | Allocations: 11350)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:04:09 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:04:12 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 505)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 1024)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 10030)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 10984)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:04:12 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:04:16 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.it@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.it@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.8ms | Allocations: 4821)
+
+
+  
+NoMethodError (undefined method `remember_token=' for #<User:0x00007fe2997854a0>
+Did you mean?  remember):
+  
+app/models/user.rb:31:in `remember'
+app/helpers/sessions_helper.rb:20:in `remember'
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:09:01 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.it@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.it@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 32.6ms | Allocations: 9005)
+
+
+  
+NoMethodError (undefined method `remember_token=' for #<User:0x00007fe2988d4ca8>
+Did you mean?  remember):
+  
+app/models/user.rb:31:in `remember'
+app/helpers/sessions_helper.rb:20:in `remember'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:09:07 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 353)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1531)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 10447)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.3ms | Allocations: 11508)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:09:08 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:09:10 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 505)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1024)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 9897)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 10951)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:09:11 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:09:12 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.8ms | Allocations: 4838)
+
+
+  
+NoMethodError (undefined method `remember_token=' for #<User:0x00007fe298e6b5e0>
+Did you mean?  remember):
+  
+app/models/user.rb:31:in `remember'
+app/helpers/sessions_helper.rb:20:in `remember'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:09:30 +0700
+Processing by SessionsController#new as */*
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 512)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.7ms | Allocations: 1016)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 10430)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.5ms | Allocations: 11438)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:15:58 +0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4467)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 78)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 20.4ms | Allocations: 3711)
+  Rendered layouts/_footer.html.erb (Duration: 3.5ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 155.4ms | Allocations: 26829)
+Completed 200 OK in 175ms (Views: 156.9ms | ActiveRecord: 3.3ms | Allocations: 30003)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:15:58 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-19 10:16:13 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1743)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 11303)
+Completed 200 OK in 31ms (Views: 21.5ms | ActiveRecord: 3.7ms | Allocations: 16265)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:16:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:16:17 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 786)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.1ms | Allocations: 1024)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 10188)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.4ms | Allocations: 11639)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:16:17 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:16:19 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en/users/1
+Completed 302 Found in 235ms (ActiveRecord: 0.4ms | Allocations: 1854)
+
+
+Started GET "/en/users/1" for 127.0.0.1 at 2022-01-19 10:16:20 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 158)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 991)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 9542)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 1.7ms | Allocations: 11173)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:16:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:20:33 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 467)
+  Rendered layouts/_shim.html.erb (Duration: 2.3ms | Allocations: 77)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 1343)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 371.6ms | Allocations: 78222)
+Completed 200 OK in 379ms (Views: 372.3ms | ActiveRecord: 0.5ms | Allocations: 79903)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:20:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/logout" for 127.0.0.1 at 2022-01-19 10:20:40 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1315)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:20:40 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 318)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1028)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 9747)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 10695)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:20:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:20:42 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 54.4ms | Allocations: 6118)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.2ms | Allocations: 1025)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 15645)
+Completed 200 OK in 73ms (Views: 70.4ms | ActiveRecord: 0.5ms | Allocations: 17098)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:20:42 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:24:13 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 20.6ms | Allocations: 5035)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 78)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 12.9ms | Allocations: 3605)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 148.0ms | Allocations: 39400)
+Completed 200 OK in 165ms (Views: 151.8ms | ActiveRecord: 1.6ms | Allocations: 42568)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:24:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:24:18 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1437)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 1152)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 11038)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 12586)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:24:18 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:24:22 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 3.4ms | Allocations: 8424)
+
+
+  
+NoMethodError (undefined method `remember_token=' for #<User:0x00005639b21abde0>
+Did you mean?  remember):
+  
+app/models/user.rb:46:in `remember'
+app/helpers/sessions_helper.rb:21:in `remember'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:28:59 +0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4477)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 1328)
+  Rendered layouts/_footer.html.erb (Duration: 2.0ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 24461)
+Completed 200 OK in 80ms (Views: 72.2ms | ActiveRecord: 0.0ms | Allocations: 27635)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:28:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:29:02 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1437)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 442)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 10501)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 12070)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:29:02 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:29:04 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Update (25.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:29:05.399888', `users`.`remember_digest` = '$2a$12$Uus2ap5fzVXYySFUjxETH.lLWgQ7kx6kZpMc/zKgQUlwhhnuHDt2O' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 481ms (ActiveRecord: 41.3ms | Allocations: 10063)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:29:05 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 323)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.4ms | Allocations: 1241)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 10043)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.6ms | Allocations: 11009)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:29:05 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:29:28 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 317)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 987)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 9819)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.4ms | Allocations: 10707)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:29:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:29:33 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 592)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.7ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 10032)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.4ms | Allocations: 10992)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:29:33 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:29:38 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Update (9.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:29:38.625181', `users`.`remember_digest` = '$2a$12$ES72eqf7P.Og7wj1EythM.GLUATrWpW3Bz6eJ1zIOV3/bZ9LjvYkC' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 436ms (ActiveRecord: 12.8ms | Allocations: 4211)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:29:38 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 317)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 990)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 9808)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 10756)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:29:38 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:29:42 +0700
+Processing by StaticPagesController#home as */*
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 426)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 9629)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 10623)
+
+
+Started GET "/logout" for 127.0.0.1 at 2022-01-19 10:30:08 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59:in `forget'
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:30:08.279187', `users`.`remember_digest` = NULL WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:59:in `forget'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 14ms (ActiveRecord: 8.0ms | Allocations: 3008)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:30:08 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 426)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 9127)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 10065)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:30:08 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:30:18 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 592)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 426)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 9403)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 10348)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:30:18 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:30:22 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:30:22.613446', `users`.`remember_digest` = '$2a$12$PCrEyPp3lMwAOS7fqkdiMeCrqHkBoMPeECNXlkNHKIm8h6NuzF.Sq' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:49:in `remember'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 422ms (ActiveRecord: 5.5ms | Allocations: 4154)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:30:22 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 989)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 9713)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 10670)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:30:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-19 10:35:59 +0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 23.5ms | Allocations: 4477)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 78)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 63.9ms | Allocations: 7215)
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 312.8ms | Allocations: 30349)
+Completed 200 OK in 337ms (Views: 270.7ms | ActiveRecord: 48.4ms | Allocations: 33552)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:36:01 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/logout" for 127.0.0.1 at 2022-01-19 10:36:11 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mUser Update (11.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:36:11.973829', `users`.`remember_digest` = NULL WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 30ms (ActiveRecord: 21.4ms | Allocations: 3361)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:36:12 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 10.6ms | Allocations: 339)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 478)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 9259)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms | Allocations: 10240)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:36:12 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 10:36:14 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1393)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 11.3ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 10200)
+Completed 200 OK in 59ms (Views: 49.4ms | ActiveRecord: 0.0ms | Allocations: 11671)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:36:15 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 10:36:19 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Update (30.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 03:36:19.909555', `users`.`remember_digest` = '$2a$12$Kcw03X5Q1MlxqaPrFmnvFe2s/mqHdSMTxfAi0gplkowoLMi2Qw6WO' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mTRANSACTION (74.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 711ms (ActiveRecord: 120.0ms | Allocations: 4610)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 10:36:20 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 319)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.9ms | Allocations: 1004)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 9714)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 10676)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 10:36:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-19 11:40:35 +0700
+  [1m[35m (21.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 33.5ms | Allocations: 4477)
+  Rendered layouts/_shim.html.erb (Duration: 0.8ms | Allocations: 81)
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 40.8ms | Allocations: 7027)
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 510.4ms | Allocations: 110093)
+Completed 200 OK in 552ms (Views: 500.9ms | ActiveRecord: 20.1ms | Allocations: 113192)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 11:40:37 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 11:40:39 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1437)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 1059)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 10984)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.5ms | Allocations: 12563)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 11:40:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 11:40:43 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Update (9.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 04:40:43.519859', `users`.`remember_digest` = '$2a$12$ud2OF9B7M8BvO3cLNO/fne9s9EzRAMRtiK9O86FPsGwH7mzc9kQWy' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 454ms (ActiveRecord: 16.1ms | Allocations: 4852)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 11:40:43 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 322)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.7ms | Allocations: 1134)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 9954)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.4ms | Allocations: 10905)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 11:40:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/logout" for 127.0.0.1 at 2022-01-19 11:40:52 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 04:40:52.594185', `users`.`remember_digest` = NULL WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms | Allocations: 3042)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 11:40:52 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 317)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 429)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 9117)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 10059)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 11:40:52 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en" for 127.0.0.1 at 2022-01-19 13:25:34 +0700
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:25:35 +0700
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 20.9ms | Allocations: 5468)
+  Rendered layouts/_shim.html.erb (Duration: 0.9ms | Allocations: 81)
+  Rendered layouts/_header.html.erb (Duration: 8.7ms | Allocations: 1333)
+  Rendered layouts/_footer.html.erb (Duration: 4.0ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 172.7ms | Allocations: 50193)
+Completed 200 OK in 195ms (Views: 179.0ms | ActiveRecord: 0.0ms | Allocations: 55508)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 13:25:38 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 318)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 438)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 9126)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 10088)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:25:38 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 13:25:40 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1395)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 10207)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 11666)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:25:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started POST "/en/login" for 127.0.0.1 at 2022-01-19 13:25:43 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mUser Update (9.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 06:25:43.969333', `users`.`remember_digest` = '$2a$12$ejxoEcZ6.BOfn2z39aclC.6HRWp7BRkRrWQ/9/F2JDXw7d215Jv4a' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:34:in `remember'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34:in `remember'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 480ms (ActiveRecord: 37.9ms | Allocations: 9933)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 13:25:43 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 321)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 7.0ms | Allocations: 1244)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 10072)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 2.3ms | Allocations: 11037)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:25:44 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en" for 127.0.0.1 at 2022-01-19 13:25:47 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 1000)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9699)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 10683)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:25:47 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/setting" for 127.0.0.1 at 2022-01-19 13:25:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/setting"):
+  
+Started GET "/allusers" for 127.0.0.1 at 2022-01-19 13:26:10 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/allusers"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-19 13:26:14 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 999)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 9813)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 10779)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:26:14 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/logout" for 127.0.0.1 at 2022-01-19 13:26:18 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-19 06:26:18.482872', `users`.`remember_digest` = NULL WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:44:in `forget'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms | Allocations: 2996)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-19 13:26:18 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 315)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 428)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 9107)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 10039)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:26:18 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 13:28:10 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 880)
+  Rendered layouts/_shim.html.erb (Duration: 0.9ms | Allocations: 76)
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 781)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 331)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 11114)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 12773)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:28:11 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
+Started GET "/en/login" for 127.0.0.1 at 2022-01-19 13:29:00 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 922)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 76)
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 780)
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 330)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 11016)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 12667)
+
+
+Started GET "/javascripts/translations.js" for 127.0.0.1 at 2022-01-19 13:29:00 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/translations.js"):
+  
