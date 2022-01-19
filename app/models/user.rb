@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  scope :latest_user, ->{order created_at: :desc}
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -34,10 +36,11 @@ class User < ApplicationRecord
     update remember_digest: User.digest(remember_token)
   end
 
-  def authenticate? remember_token
-    return false unless self.remember_token
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
 
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+    BCrypt::Password.new(digest).is_password? token
   end
 
   def forget
@@ -45,7 +48,6 @@ class User < ApplicationRecord
   end
 
   private
-
   def downcase_email
     email.downcase!
   end
