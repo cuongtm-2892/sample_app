@@ -19378,3 +19378,2131 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 3.9ms | Allocations: 9414)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('661840412039056215', 0)[0m
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddActivationToUsers (20220120043542)
+  [1m[35m (35.2ms)[0m  [1m[35mALTER TABLE `users` ADD `activation_digest` varchar(255)[0m
+  [1m[35m (12.6ms)[0m  [1m[35mALTER TABLE `users` ADD `activated` tinyint(1) DEFAULT FALSE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mALTER TABLE `users` ADD `activated_at` datetime[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220120043542')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('661840412039056215')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (21.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `sample_app_development`[0m
+  [1m[35m (10.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `sample_app_test`[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `sample_app_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE `sample_app_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('661840412039056215', 0)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20220118014510)
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220118014510')[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20220118014928)
+  [1m[35m (9.0ms)[0m  [1m[35mALTER TABLE `users` ADD `password_digest` varchar(255)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220118014928')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRememberDigestToUsers (20220119025355)
+  [1m[35m (11.4ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_digest` varchar(255)[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220119025355')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20220119183843)
+  [1m[35m (10.9ms)[0m  [1m[35mALTER TABLE `users` ADD `admin` tinyint(1) DEFAULT FALSE[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220119183843')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActivationToUsers (20220120043542)
+  [1m[35m (8.9ms)[0m  [1m[35mALTER TABLE `users` ADD `activation_digest` varchar(255)[0m
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE `users` ADD `activated` tinyint(1) DEFAULT FALSE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mALTER TABLE `users` ADD `activated_at` datetime[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220120043542')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2022-01-20 04:39:23.603242', '2022-01-20 04:39:23.603242')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('661840412039056215')[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `admin`, `activation_digest`, `activated`, `activated_at`) VALUES ('Cuong', 'cuongtm.dev@gmail.com', '2022-01-20 04:39:30.016949', '2022-01-20 04:39:30.016949', '$2a$12$77jmHTD4Ztzl633uufpH6u6fElc/UK7n9xX/EjKg8JXLOixuivZHu', TRUE, '$2a$12$x5JWQmai3NOPkOF0G7HljOFliGtH3PVTsiWv8nDIpmFX.GmwJR09e', TRUE, '2022-01-20 04:39:29')[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong11@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Rocco Waters', 'tmcuong11@gmail.com', '2022-01-20 04:39:30.624634', '2022-01-20 04:39:30.624634', '$2a$12$g93qgQqKQNzw2ZXcgMPZw.CMZyTysNjPB2K8klClYAqjHag.1Kxai', '$2a$12$uFWO.tyPNKsMDREF.6UxUO1CjFeIpl1oSb9cgxAqUoZiujccmU5/e', TRUE, '2022-01-20 04:39:30')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong12@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Herlinda Labadie', 'tmcuong12@gmail.com', '2022-01-20 04:39:31.020601', '2022-01-20 04:39:31.020601', '$2a$12$4IBk4rNBDHFSDC.uGL4BX.xIaUZzlVsAMROtY5EN8U8keFDF.Fqy2', '$2a$12$9g3/a7LNkj4IH2HYnWZHDeC25sWj0PxjXK3njP0VH8i0BprcFFQR.', TRUE, '2022-01-20 04:39:30')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong13@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Heriberto Lockman', 'tmcuong13@gmail.com', '2022-01-20 04:39:31.413362', '2022-01-20 04:39:31.413362', '$2a$12$E9H5Uz9Imw7X3EpCC2BxFepb4gJH8e/90TR2kqhl6w23jkeL9UeWK', '$2a$12$Wm09pPw8GHNe3URh8c4NS.APKxlsKI2fh7o31sksv6J1meqZkCil2', TRUE, '2022-01-20 04:39:31')[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong14@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Arthur DuBuque', 'tmcuong14@gmail.com', '2022-01-20 04:39:31.807113', '2022-01-20 04:39:31.807113', '$2a$12$8.6XP6F3Vvi.LOUBCvQRB.otc4QEp13LYlXJwsXbqmAb8PjeTPlDy', '$2a$12$Viq9xuQ/QHGZw0jQR8EVO.HBgnCT.2DOdeJAlBfZYBr4O1gOrInYW', TRUE, '2022-01-20 04:39:31')[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong15@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Sina Rau', 'tmcuong15@gmail.com', '2022-01-20 04:39:32.206379', '2022-01-20 04:39:32.206379', '$2a$12$KHEXBCIMPIxUdOYt7olMseMiAOC7RzsKPt.5Pb9kwNe7oI4i4aXiy', '$2a$12$du2eFr4QyAaktDnyZItE6ejwcLvkn33.hGXqzF1ZfmsBRMgPMbOgm', TRUE, '2022-01-20 04:39:32')[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong16@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Robby Block', 'tmcuong16@gmail.com', '2022-01-20 04:39:32.598668', '2022-01-20 04:39:32.598668', '$2a$12$ovhVJiykOFVvKVdRdY/E5.6Q17ds8Ngq9Vs4zo8nFxBawrGFsCeY.', '$2a$12$Qx4bowL1qpPjyMdeT9ZRz.Ek3.SIFun.DWDc3Oli88wpTIlyrc88q', TRUE, '2022-01-20 04:39:32')[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong17@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Sheryl Schamberger', 'tmcuong17@gmail.com', '2022-01-20 04:39:32.993636', '2022-01-20 04:39:32.993636', '$2a$12$4f5Twudke1xXoYZboiZOLus0UqmEenD4Kb2ndMWyCPAmhuQ/vrWbu', '$2a$12$49Nii3XAN8glhDOzTOLZIu9xEy1gaQvmQX4v.InWqc3nvDvs206le', TRUE, '2022-01-20 04:39:32')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong18@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Bobbie Walter', 'tmcuong18@gmail.com', '2022-01-20 04:39:33.390230', '2022-01-20 04:39:33.390230', '$2a$12$Q6RsiACfVRoV1TZ3FwT3KedI3LjTQ2UCU2SvCE8heKGKFUywdQiW6', '$2a$12$1nizuCi0dVvxuzl234JAF.nGl6Lc4IX4f9rM6y.qaSPj3iebxToC2', TRUE, '2022-01-20 04:39:33')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong19@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Lucy Herman DVM', 'tmcuong19@gmail.com', '2022-01-20 04:39:33.780218', '2022-01-20 04:39:33.780218', '$2a$12$yh0ng/5MBie/uAKP7Ucuw.Nj1IDN6t7CG2rRO74lP/BXwPMIQxCCy', '$2a$12$ZKaSFGxOHkmnDKTxivrVnedw.Nw3xVT7Wv/EONUVL/fZ9DO1Rp0/.', TRUE, '2022-01-20 04:39:33')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong110@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jake Tremblay', 'tmcuong110@gmail.com', '2022-01-20 04:39:34.173309', '2022-01-20 04:39:34.173309', '$2a$12$JYCUIEU4FjY66T8mKGi7ouFreYiAD.qXGoL6QnS/J7QY5pMUrpjeu', '$2a$12$HXsZPiqHQCLcGHepCWDYcOGLBVXs/7afu0ABDhVJHP3kqvzj0Y9EG', TRUE, '2022-01-20 04:39:33')[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong111@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Marita Aufderhar', 'tmcuong111@gmail.com', '2022-01-20 04:39:34.566879', '2022-01-20 04:39:34.566879', '$2a$12$OgIxFAfuwBrGWmmTUBPCaODl/g.Mjk957cqz1o3Nr3q64z2Gdzoq6', '$2a$12$nnNxi5w1fxCR265.gZKy3eMLrVWnrBG0cxnzx/d3XdcEvZmuIhsGe', TRUE, '2022-01-20 04:39:34')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong112@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Maryanna Rohan', 'tmcuong112@gmail.com', '2022-01-20 04:39:34.959073', '2022-01-20 04:39:34.959073', '$2a$12$Ou5BFgoHSzJSFgK8av4Bcu3boepOEUuzyFANj7doJB3Sjws4N8Cgi', '$2a$12$cXRc3c16Rgyior1G21BK8OFtWXH2NKePINGOR0TOXaCS2GqNnMyvy', TRUE, '2022-01-20 04:39:34')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong113@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Theresa Mante', 'tmcuong113@gmail.com', '2022-01-20 04:39:35.350991', '2022-01-20 04:39:35.350991', '$2a$12$9o83yqfFtTUudkYpyWIdDuiev1ZD2lKtTxh5GspYcqNt8cMyiNCvG', '$2a$12$gMdIeHRaPvruXQcK9H/7iu80TrDlY7NsgxErlyX4VigxuDH3zMbWS', TRUE, '2022-01-20 04:39:35')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong114@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Shad Schumm', 'tmcuong114@gmail.com', '2022-01-20 04:39:35.744378', '2022-01-20 04:39:35.744378', '$2a$12$9Xy.JRcWy3MtQku.qXulpOCvAzUcAOIv.O/rAI5iJpHQfAT61nDYW', '$2a$12$aqkY95rY0YJOXN50wFcZU.eUl5M2ARit.zXA.Hg/wyrNQBjMUyIAu', TRUE, '2022-01-20 04:39:35')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong115@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Janee Halvorson Sr.', 'tmcuong115@gmail.com', '2022-01-20 04:39:36.135619', '2022-01-20 04:39:36.135619', '$2a$12$9i/fd/qMIO5jKjf4IhQLi.TD8FITJgwarqd3kO022WeIdJmftCqAm', '$2a$12$hXP3Ag6Wfiqz4PJ6vklpb.3dWygnJVaQAFmZ84k3JqJ8p6xk0jaA6', TRUE, '2022-01-20 04:39:35')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong116@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Avril Lehner DVM', 'tmcuong116@gmail.com', '2022-01-20 04:39:36.526264', '2022-01-20 04:39:36.526264', '$2a$12$hV1Bg2JftwO0SV89GKlRfubsndoP9YCkHcFlbqpYbgTwoTREb.nk2', '$2a$12$wYojY.qxaiX2HaN3TAt5peckc/OF4uR/oB4wn1kXmXVmSir4o6qb2', TRUE, '2022-01-20 04:39:36')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong117@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Irmgard Harvey', 'tmcuong117@gmail.com', '2022-01-20 04:39:36.920022', '2022-01-20 04:39:36.920022', '$2a$12$bfC23fOUsB/IcU0L6IQqZ.Yxyx9Z.tsoUS6Rv3tcxylI9msat4naW', '$2a$12$sg0Cd2THkERQmDkxbey2Meeo0hyVVV3fl8gCot.fiPduqzJqb9NPy', TRUE, '2022-01-20 04:39:36')[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong118@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Terrell Kuphal I', 'tmcuong118@gmail.com', '2022-01-20 04:39:37.314596', '2022-01-20 04:39:37.314596', '$2a$12$yaV9I.hhUjDcGYbumn2T7.ZKOzlO2uJVPxBjWLJT61ccdy1qbobL2', '$2a$12$1NViYBErIsJAP7hh6nRR7O/fntQOPuAg4YNUoIYUaSrRhICx/oXrG', TRUE, '2022-01-20 04:39:37')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong119@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Rigoberto Bahringer', 'tmcuong119@gmail.com', '2022-01-20 04:39:37.705620', '2022-01-20 04:39:37.705620', '$2a$12$a7sGPh6zM5V20ees7to4SuD2L0TX1tBA.njj9xpt60fXTkce5uaem', '$2a$12$gceVrRQiGJSIowSE3yiQ3O/nPbrN9Ta9fIqGGOMR4a9t5igtPTzOG', TRUE, '2022-01-20 04:39:37')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong120@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Shayne O\'Reilly DVM', 'tmcuong120@gmail.com', '2022-01-20 04:39:38.100047', '2022-01-20 04:39:38.100047', '$2a$12$yd5E4cAHxD2Vzto.H.tDGu0ull2rdb.7Iivlw8V2Bzp5Pk2NZtHqe', '$2a$12$SFCXSgd1XupGTDW.XQWbuu1Z55./8fTeR8dcoPhO0PMSu2qUZ7cPO', TRUE, '2022-01-20 04:39:37')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong121@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Miss Aleen Yundt', 'tmcuong121@gmail.com', '2022-01-20 04:39:38.494218', '2022-01-20 04:39:38.494218', '$2a$12$cqv8go66Lrd0iENAXCNzfujx9OEX8RdEyhenWuNHWhbP3fJRDP13G', '$2a$12$t0SP3/yKxkMPHckxzunOg.eFe3mdrTDdRZ4XM6Wsq8j4kcunhmnwW', TRUE, '2022-01-20 04:39:38')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong122@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jerold Bode', 'tmcuong122@gmail.com', '2022-01-20 04:39:38.886199', '2022-01-20 04:39:38.886199', '$2a$12$UyHLYbvArKbT8DYIRWroNO2geyUN9ixM0I06GUJmePXJQ787lsxUm', '$2a$12$v4EkwkPwV6hEmXmjcTAeiueBJIsMQDMpHvupKt.Iqaix5v8dWcRdW', TRUE, '2022-01-20 04:39:38')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong123@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Larraine Stiedemann', 'tmcuong123@gmail.com', '2022-01-20 04:39:39.279078', '2022-01-20 04:39:39.279078', '$2a$12$0S0Q72ThTRuzdEuBJhTmW.v2/FPTXEHE5mNy3luXI5c7sB2iCA.5u', '$2a$12$YRfLIUUlrGiLBMrolhUU.Om2z1.8SKr0JJgXBMeMJ9iriIrTgxCbC', TRUE, '2022-01-20 04:39:39')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong124@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Buster Harvey Sr.', 'tmcuong124@gmail.com', '2022-01-20 04:39:39.707307', '2022-01-20 04:39:39.707307', '$2a$12$qpNds5AChZQO1rq3k/ecveZymGB6vOOEtt9dr.VT.QItlUpJtX7ZO', '$2a$12$4r3MIPYP7S4qqIcmgg4jgOtLn7eunSB9gXC3YYqaZWi21wNJB3/nG', TRUE, '2022-01-20 04:39:39')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong125@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Armandina Schultz', 'tmcuong125@gmail.com', '2022-01-20 04:39:40.127448', '2022-01-20 04:39:40.127448', '$2a$12$KbpMNFu.0EBpwVFgFVW4puy8BtAKCTFdUqDEFr6GI68Ov22PgEObC', '$2a$12$RjUDQcCDKDBLiShCRpV.0.UKZtOO8TTG2Ud6CMnoArqq8.k52En7G', TRUE, '2022-01-20 04:39:39')[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong126@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Humberto Schuster', 'tmcuong126@gmail.com', '2022-01-20 04:39:40.655886', '2022-01-20 04:39:40.655886', '$2a$12$J96k2SFZeKfr0stGHoCv3.eZUMZOnaeBbteDIlYZI3OWZsUj5p66K', '$2a$12$DAR0trfGGqffFQPUl7U1AefhuuZuufXWT2zwk43gAh00FuePgUeT2', TRUE, '2022-01-20 04:39:40')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong127@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jacinto Hirthe', 'tmcuong127@gmail.com', '2022-01-20 04:39:41.049546', '2022-01-20 04:39:41.049546', '$2a$12$3IiJQJ9p6fjdiGtmsjnmXOAGaAedna3s612DBVOuFvfpyoXLzMwra', '$2a$12$X3siqHeoJeazKrDMGDQbeOyeL5mA8cQCDSSMUq2mJo9kRbm5rwYWm', TRUE, '2022-01-20 04:39:40')[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong128@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jene Jenkins', 'tmcuong128@gmail.com', '2022-01-20 04:39:41.449280', '2022-01-20 04:39:41.449280', '$2a$12$yVQ3.oxqgFgjMjZbuvVGzegIXoeg00ZM1vRg2rG1v6jVuoIxoMTjS', '$2a$12$aSPqiqB4RbqrWLt5UaThle.Kla6pIgLudXLrmNP6tv.uFrrnYgviy', TRUE, '2022-01-20 04:39:41')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong129@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Anna Abshire MD', 'tmcuong129@gmail.com', '2022-01-20 04:39:41.870505', '2022-01-20 04:39:41.870505', '$2a$12$mfou.mJlLJTi3XkNhp/tn.ElVUPKZ/2Moh0k3JrssDGaScmo74aie', '$2a$12$dpc/jMyKy62BgkajbjcQLuSoWhsK8UV6cXT44GSL5sKqsqp1MNhiW', TRUE, '2022-01-20 04:39:41')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong130@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Stephani Gleason', 'tmcuong130@gmail.com', '2022-01-20 04:39:42.264156', '2022-01-20 04:39:42.264156', '$2a$12$MwHhlN.0h29.f5H/0r.f9OtZvnYmDvwtdqFc3/wnVgCBGQblVpnbW', '$2a$12$e8eVmIDV4t8qVuHhIs38H.Usgor5I2RsBSdL338JinL/k1Jcyhuqy', TRUE, '2022-01-20 04:39:42')[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong131@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Dr. Dinorah Dooley', 'tmcuong131@gmail.com', '2022-01-20 04:39:42.672158', '2022-01-20 04:39:42.672158', '$2a$12$viDQMZn5IBY26oc5Zb5kGOB3lKK/IM9lb5FvrabHRc74NbqRHs3Fq', '$2a$12$b9Odnj.tjhJlh/ITZV.9ceBwXi84akLw.5T0gsTuNNWXdnic1Wu8G', TRUE, '2022-01-20 04:39:42')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong132@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Mr. Sina Corkery', 'tmcuong132@gmail.com', '2022-01-20 04:39:43.089561', '2022-01-20 04:39:43.089561', '$2a$12$5IJF5mOwYezikfhtou0sYuiN4JZDr5nHsCaY3tg/vMyWjDosh8xTO', '$2a$12$tBFaOBwx24YVwsIiVm9tZuk/MRG96Ipw3gUkCJiMVj4rAmEr72Gmu', TRUE, '2022-01-20 04:39:42')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong133@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Noreen Price', 'tmcuong133@gmail.com', '2022-01-20 04:39:43.486141', '2022-01-20 04:39:43.486141', '$2a$12$dxcTFDSDc9JsUgVDaxRWY.pPiHXK5dOMD6DE.kBiZBMHbzMfCaGgO', '$2a$12$B4znrLahmuXv0kfAw.bTSusJaM6Vo33TLU/i5G4cXIg17wPZPx/zS', TRUE, '2022-01-20 04:39:43')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong134@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Vincent Reichel', 'tmcuong134@gmail.com', '2022-01-20 04:39:43.902262', '2022-01-20 04:39:43.902262', '$2a$12$3qyHwB5eAzcGUt4pkhnHTuAuf5d9HvfxWPKD0cayq8RCcsej3Un.y', '$2a$12$NnecAV6ID1XHVrJl1jz7XOHsiSbNii1J1e4cIIHekmuazeEtVTzLK', TRUE, '2022-01-20 04:39:43')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong135@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Wilbert Bradtke', 'tmcuong135@gmail.com', '2022-01-20 04:39:44.308107', '2022-01-20 04:39:44.308107', '$2a$12$sRyvmVCM2TW1VFa9pwqFvu2jZVm5XaCv0ij2OTHDLuN3HmDRhTiGu', '$2a$12$7BBcf7ijVhvAyYZPxBcSuupxbOic6.nv7VtdPaB09agUqDQNmwakK', TRUE, '2022-01-20 04:39:44')[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong136@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Darron Ryan', 'tmcuong136@gmail.com', '2022-01-20 04:39:44.706494', '2022-01-20 04:39:44.706494', '$2a$12$xPKXLXwfp9BTaYI572unVOlPY.zITNqUSwJ0RFFMmFTj/vl8VEE5K', '$2a$12$BbwJROb0QIGmj3MXbk66POkZCrZIkCs9z7xDQ7sAeAvoSrOfCizt.', TRUE, '2022-01-20 04:39:44')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong137@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Ezra Stanton MD', 'tmcuong137@gmail.com', '2022-01-20 04:39:45.121439', '2022-01-20 04:39:45.121439', '$2a$12$u0U18Z4r7vRsts7VKefLSuGA8AOjafMh7U7vXgXjGV8aYjy5hhQRm', '$2a$12$awgzT4/ze65qHCLob5JmWeAETbBC8atRb00FGscY/oexlFHVRND8m', TRUE, '2022-01-20 04:39:44')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong138@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Arlene Larson DVM', 'tmcuong138@gmail.com', '2022-01-20 04:39:45.519779', '2022-01-20 04:39:45.519779', '$2a$12$6WGgg82hi5cDEW/pFE/hNugiOc4HM4vDWezKqlgkd2Rt/mMgxlmKO', '$2a$12$kzyKRvNUzrT7SsYrSYCZ/uXp.Bp/5vztUqjHU2CaHGg7SNkLNyNZq', TRUE, '2022-01-20 04:39:45')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong139@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Pierre Wiza', 'tmcuong139@gmail.com', '2022-01-20 04:39:45.913605', '2022-01-20 04:39:45.913605', '$2a$12$t5Itt0xJF2ZhGllX1bTkM.6YE1IG9tsD.jeKn.AP5L/rhQUidCP8u', '$2a$12$Ybd3lVhquZzZmSdD4w/jpOpaslf0L.LQkuiEY4O1CpIiR60wkIBFW', TRUE, '2022-01-20 04:39:45')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong140@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Dr. Eva Turcotte', 'tmcuong140@gmail.com', '2022-01-20 04:39:46.307554', '2022-01-20 04:39:46.307554', '$2a$12$IXXuE4TEEtnOW3UwQG3Ty.asD7uQW/d1CBw.4quhz1cmHThbWWHom', '$2a$12$U4gQ57tC9x4HnDIffnQLROSbsAk.01ZL5ad0rpvMnznlb3pxqimrS', TRUE, '2022-01-20 04:39:46')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong141@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Crystle Barton MD', 'tmcuong141@gmail.com', '2022-01-20 04:39:46.708200', '2022-01-20 04:39:46.708200', '$2a$12$LpvyqNgdELFMBSd7r4bK3.jBEkwHe7ZOhdHbwRePyrtqGbFJPG3HK', '$2a$12$EU/3OAAO9vNKILOsrST/wuw841qVxf2.kGNqGoMbjyLrFwiP5A/se', TRUE, '2022-01-20 04:39:46')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong142@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Lavelle Harris', 'tmcuong142@gmail.com', '2022-01-20 04:39:47.106335', '2022-01-20 04:39:47.106335', '$2a$12$b46C.edUQYdNDfJUTRFxAufDLwTNrRk2sDuB0wJLBTvuSKoWgpoR6', '$2a$12$qHFmNJ8cclgptlvV0sw0jupxhFv6iJ8VEfZ8MBkCFhaOt0qPL4N4G', TRUE, '2022-01-20 04:39:46')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong143@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Almeda Berge II', 'tmcuong143@gmail.com', '2022-01-20 04:39:47.502821', '2022-01-20 04:39:47.502821', '$2a$12$B6MCtkk7L/.rXaFhrNSmC./townGQ.4CyOi/5HF29e4EBc.WTK/vu', '$2a$12$K4xgdWNfDGkS4.pqd/9nXu5FjVCS2W6y0lQIZn0y4ADU3enYCr9Ye', TRUE, '2022-01-20 04:39:47')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong144@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Olympia Kunze', 'tmcuong144@gmail.com', '2022-01-20 04:39:47.897406', '2022-01-20 04:39:47.897406', '$2a$12$xGorSTUAYEAahxJxRkqG0eji8.MJBIqriR7C1XEh1vM2niabZ9nIy', '$2a$12$5uRvpGQgMCgCCHcQHQrHj.xbt5BC7sMr0UjE5RDSk3dNjrp0K6Tq.', TRUE, '2022-01-20 04:39:47')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong145@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jarred Moore IV', 'tmcuong145@gmail.com', '2022-01-20 04:39:48.294179', '2022-01-20 04:39:48.294179', '$2a$12$PJpJnk6N5lGKZsSmzYh7xOgQ.Rspb8lB.8ptMCq9X85X7o85Lznqm', '$2a$12$stJz.6XFyOooxm078ISRBeIfNxpOr34qvIWz9lqqfqezokIa.7OXm', TRUE, '2022-01-20 04:39:48')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong146@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Barbie Okuneva', 'tmcuong146@gmail.com', '2022-01-20 04:39:48.690367', '2022-01-20 04:39:48.690367', '$2a$12$GYKWBAf3hU0UxpIEh5UhIONpthQ7umUFvZo/mr890KFzIkm3dFI1u', '$2a$12$oF3K3HOLQ8FeMN8pLlOEoe/ag/I4HaJx/xXKZsqBkx4SEhDX0SuIq', TRUE, '2022-01-20 04:39:48')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong147@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Willie Boehm', 'tmcuong147@gmail.com', '2022-01-20 04:39:49.084654', '2022-01-20 04:39:49.084654', '$2a$12$lIi.z3YNcPxcP1Qqt43UJubL7Jx7ApGbZGr07qRw/BJqTEIISS2Y2', '$2a$12$Jnpuspo4j9QhyT2MwG93gOxXeEOV16AS6yqvIWFaKmf93x3LFhKl6', TRUE, '2022-01-20 04:39:48')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong148@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Tanya Dooley', 'tmcuong148@gmail.com', '2022-01-20 04:39:49.479501', '2022-01-20 04:39:49.479501', '$2a$12$d7y.VcteWRPiCzD.yjNpbuYdn8yasITsBQzzrghgeSu64eD0a/dqq', '$2a$12$ISDQ/nXu/vkvdOUum67pV.wDMc9W1VZ0UyYAATdtkJZ2UIjZAeOKy', TRUE, '2022-01-20 04:39:49')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong149@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Kristyn Gusikowski', 'tmcuong149@gmail.com', '2022-01-20 04:39:49.872900', '2022-01-20 04:39:49.872900', '$2a$12$EhAPWvSrtB0Srz0fa0Bz6.P27u4wSVNTXeieqxbeUtg/BbJWwZ0KO', '$2a$12$G5rZrECstvmRaQs6fORkIufczvNsbehs422EMJw.MI9GP04vhkhpy', TRUE, '2022-01-20 04:39:49')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong150@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Santos Towne', 'tmcuong150@gmail.com', '2022-01-20 04:39:50.268544', '2022-01-20 04:39:50.268544', '$2a$12$Uiil4UsIVFItmOP8Hx1yY.YNp7JQtkEczzLFkBLmVfRKv6.PO/zIK', '$2a$12$Pd.6oO0RTcgcsmCMN2/dGOTwD37C8Jnnf4vltDEDGHvEP/AAt2Nh2', TRUE, '2022-01-20 04:39:50')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong151@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Oren Oberbrunner PhD', 'tmcuong151@gmail.com', '2022-01-20 04:39:50.661695', '2022-01-20 04:39:50.661695', '$2a$12$tNV2uHPWgOeRvIQc.XaTieZ.O3otL47Ehsqe1bXWfh6e1h9qrn2EO', '$2a$12$WTN8wxgaWeQPhUmUwy5Cy.mRFbQxj5DjQcGU6V3A/ccjfb2qn/g/e', TRUE, '2022-01-20 04:39:50')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong152@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Delsie Murphy DDS', 'tmcuong152@gmail.com', '2022-01-20 04:39:51.055908', '2022-01-20 04:39:51.055908', '$2a$12$9wjg114uxMob7AwWYml7p.XX94WACihhitPKMRX9cfHUxjC6raukC', '$2a$12$Fnvpu08J7YXe8farVCayt.kjhefbIX7ofEwoYnUxtwD6Lou7pf2pS', TRUE, '2022-01-20 04:39:50')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong153@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Jessie Kozey', 'tmcuong153@gmail.com', '2022-01-20 04:39:51.450058', '2022-01-20 04:39:51.450058', '$2a$12$cHFMADiFssmkAK8BxxQwdel5WLCpbcN/f9vt3RzdhRTmL5/AOFeHS', '$2a$12$gYFO33CCPEC0CHqWYinSyeqkOI0b6vVfhQhqGDaSKGUD7qLiQHM1y', TRUE, '2022-01-20 04:39:51')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong154@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Marty Bosco', 'tmcuong154@gmail.com', '2022-01-20 04:39:51.841653', '2022-01-20 04:39:51.841653', '$2a$12$kq4EQLD3wkDbgte3M9G5GeVjpHD/z3VZ76ADzqhdaw0UMpEiI/bui', '$2a$12$qKC6wCvzBHJkcY/6ZcM/K.hviePuvkJfQoJReSpbVr1kbnD9vzuV6', TRUE, '2022-01-20 04:39:51')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong155@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Madalene Bechtelar', 'tmcuong155@gmail.com', '2022-01-20 04:39:52.235993', '2022-01-20 04:39:52.235993', '$2a$12$oJ.LZ5Y6CniJk5DkX3GqPu9GJa5LyA92RFWFJJRipjEgimB8Z9mL.', '$2a$12$XAyc1oYzCT2TkXJwqI1BUeJXPnhICENzB8x6WQEj2etlF/.ByV.Ou', TRUE, '2022-01-20 04:39:52')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong156@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`, `activated`, `activated_at`) VALUES ('Clarence Klocko', 'tmcuong156@gmail.com', '2022-01-20 04:39:52.631902', '2022-01-20 04:39:52.631902', '$2a$12$rtBOj6OfC5hfGSdXwKYF5.2pAtiSzsLd2Fph9LFshu1YmIYi3Nx6u', '$2a$12$Zgo8Lek9uDpPM7kwF9z3o.ArZ.PpjBS4qRePsPRFh.YmtLOCsBgq.', TRUE, '2022-01-20 04:39:52')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'tmcuong157@gmail.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2022-01-20 12:01:50 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 302.2ms | Allocations: 175424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 28.1ms | Allocations: 9289)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 458.6ms | Allocations: 206838)
+Completed 200 OK in 481ms (Views: 457.8ms | ActiveRecord: 6.9ms | Allocations: 210062)
+
+
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-20 12:01:55 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.5ms | Allocations: 1016)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 9824)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.5ms | Allocations: 11571)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:02:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong TM", "email"=>"cuongtm1.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 791)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 1021)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 9982)
+Completed 200 OK in 261ms (Views: 19.1ms | ActiveRecord: 3.2ms | Allocations: 13956)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:02:22 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong TM", "email"=>"cuongtm1.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (7.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Cuong TM', 'cuongtm1.dev@gmail.com', '2022-01-20 05:02:22.622040', '2022-01-20 05:02:22.622040', '$2a$12$oXqBgH7E/yyhJ/kl7bLCcurbX3ZZgXYtUi.XLHMTd/D6X1BqVph4.', '$2a$12$ZpUH8NMJNnC.QetMftji0Oj5gg9bk.HiWm3iF1tqKX5nkZ5tx1x.a')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 1.4ms | Allocations: 206)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.8ms | Allocations: 379)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 3.1ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 4.3ms | Allocations: 299)
+UserMailer#account_activation: processed outbound mail in 15.1ms
+Delivered mail 61e8ecdee70cc_141746501552a@deft.mail (5100.6ms)
+Date: Thu, 20 Jan 2022 12:02:22 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm1.dev@gmail.com
+Message-ID: <61e8ecdee70cc_141746501552a@deft.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8ecdee5871_141746501544b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8ecdee5871_141746501544b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Cuong TM,
+ 
+Welcome to the Sample App! Click on the link below to activate your account:
+ 
+http://localhost:3000/account_activations/_OfAQSccvxUWOc-k84tBxA/edit?email=cuongtm1.dev%40gmail.com
+
+----==_mimepart_61e8ecdee5871_141746501544b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+<p>Hi Cuong TM,</p>
+ 
+<p>
+Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+ 
+<a href="http://localhost:3000/account_activations/_OfAQSccvxUWOc-k84tBxA/edit?email=cuongtm1.dev%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_61e8ecdee5871_141746501544b--
+
+Redirected to http://localhost:3000/en
+Completed 302 Found in 5653ms (ActiveRecord: 10.6ms | Allocations: 29755)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:02:28 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 989)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 8307)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.4ms | Allocations: 9357)
+
+
+Started GET "/account_activations/_OfAQSccvxUWOc-k84tBxA/edit?email=cuongtm1.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:02:50 +0700
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for AccountActivationsController
+Did you mean?  redirect_back_or
+               logged_in?
+               current_user
+               current_user?):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/account_activations/_OfAQSccvxUWOc-k84tBxA/edit?email=cuongtm1.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:03:27 +0700
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for AccountActivationsController
+Did you mean?  redirect_back_or
+               logged_in?
+               current_user
+               current_user?):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/account_activations/_OfAQSccvxUWOc-k84tBxA/edit?email=cuongtm1.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:05:39 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"cuongtm1.dev@gmail.com", "id"=>"_OfAQSccvxUWOc-k84tBxA"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:3:in `edit'
+Redirected to http://localhost:3000/en/users/58
+Completed 302 Found in 302ms (ActiveRecord: 54.1ms | Allocations: 7682)
+
+
+Started GET "/en/users/58" for 127.0.0.1 at 2022-01-20 12:05:40 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"58"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1227)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 8636)
+Completed 200 OK in 44ms (Views: 34.5ms | ActiveRecord: 4.1ms | Allocations: 11089)
+
+
+Started GET "/en/users" for 127.0.0.1 at 2022-01-20 12:31:04 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (41.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (47.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 9.5ms | Allocations: 356)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 1.4ms | Allocations: 96)
+  Rendered users/index.html.erb within layouts/application (Duration: 1042.8ms | Allocations: 174832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 6.8ms | Allocations: 1517)
+  Rendered layouts/_footer.html.erb (Duration: 3.6ms | Allocations: 390)
+  Rendered layout layouts/application.html.erb (Duration: 1137.3ms | Allocations: 185628)
+Completed 200 OK in 1493ms (Views: 1149.7ms | ActiveRecord: 117.8ms | Allocations: 194725)
+
+
+Started GET "/en/users/58/edit" for 127.0.0.1 at 2022-01-20 12:31:15 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"58"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 178)
+  Rendered users/_form.html.erb (Duration: 14.9ms | Allocations: 1835)
+  Rendered users/edit.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2326)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 599)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 9863)
+Completed 200 OK in 37ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 11914)
+
+
+Started DELETE "/en/logout" for 127.0.0.1 at 2022-01-20 12:31:21 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/en/logout"):
+  
+Started GET "/en/logout" for 127.0.0.1 at 2022-01-20 12:31:23 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 58 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms | Allocations: 1665)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:31:23 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 7.6ms | Allocations: 496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 487)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7903)
+Completed 200 OK in 33ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 9431)
+
+
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-20 12:31:25 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 4.0ms | Allocations: 456)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 8399)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 9596)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:31:39 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong Manh", "email"=>"cuongtm2.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm2.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (10.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Cuong Manh', 'cuongtm2.dev@gmail.com', '2022-01-20 05:31:39.624650', '2022-01-20 05:31:39.624650', '$2a$12$ieG9gQmK221Cq2wX/skAS.fkQdQsveLdJU.1pOomuMtKE4ONSgeGW', '$2a$12$QpFqSfJoD.TmMTHQqdSkGOyPHrMteiIix5yFghoxf8kzAkN8Id9Au')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 1.1ms | Allocations: 483)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.6ms | Allocations: 652)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 0.8ms | Allocations: 348)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.3ms | Allocations: 499)
+UserMailer#account_activation: processed outbound mail in 23.7ms
+Delivered mail 61e8f3bbe2ebf_14174560157f5@deft.mail (4958.1ms)
+Date: Thu, 20 Jan 2022 12:31:39 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm2.dev@gmail.com
+Message-ID: <61e8f3bbe2ebf_14174560157f5@deft.mail>
+Subject: Account ativation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8f3bbdf8a1_1417456015634";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8f3bbdf8a1_1417456015634
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Cuong Manh,
+
+<span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span>
+http://localhost:3000/account_activations/l4gXfy6ZfwhEG2AX0xE8wA/edit?email=cuongtm2.dev%40gmail.com
+
+----==_mimepart_61e8f3bbdf8a1_1417456015634
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi Cuong Manh,</p>
+
+<p><span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span> </p>
+
+<a href="http://localhost:3000/account_activations/l4gXfy6ZfwhEG2AX0xE8wA/edit?email=cuongtm2.dev%40gmail.com"><span class="translation_missing" title="translation missing: en.activate">Activate</span></a>
+
+  </body>
+</html>
+
+----==_mimepart_61e8f3bbdf8a1_1417456015634--
+
+Redirected to http://localhost:3000/en
+Completed 302 Found in 5531ms (ActiveRecord: 26.9ms | Allocations: 24361)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:31:44 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7700)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 8757)
+
+
+Started GET "/account_activations/l4gXfy6ZfwhEG2AX0xE8wA/edit?email=cuongtm2.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:32:13 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"cuongtm2.dev@gmail.com", "id"=>"l4gXfy6ZfwhEG2AX0xE8wA"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm2.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:3:in `edit'
+Redirected to http://localhost:3000/en/users/59
+Completed 302 Found in 253ms (ActiveRecord: 1.8ms | Allocations: 1573)
+
+
+Started GET "/en/users/59" for 127.0.0.1 at 2022-01-20 12:32:13 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"59"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 59 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 59 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 611)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7708)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 0.7ms | Allocations: 9731)
+
+
+Started GET "/vi/users/59" for 127.0.0.1 at 2022-01-20 12:32:25 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"59"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 59 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 59 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 605)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7792)
+Completed 200 OK in 29ms (Views: 20.9ms | ActiveRecord: 2.2ms | Allocations: 10170)
+
+
+Started DELETE "/vi/logout" for 127.0.0.1 at 2022-01-20 12:32:30 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/vi/logout"):
+  
+Started GET "/vi/logout" for 127.0.0.1 at 2022-01-20 12:32:32 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 59 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/vi
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 1508)
+
+
+Started GET "/vi" for 127.0.0.1 at 2022-01-20 12:32:33 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 18.2ms | Allocations: 325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 442)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 7729)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 9117)
+
+
+Started GET "/vi/signup" for 127.0.0.1 at 2022-01-20 12:32:35 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 435)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 8162)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 9326)
+
+
+Started POST "/vi/users" for 127.0.0.1 at 2022-01-20 12:32:47 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong", "email"=>"cuongtm3.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Tạo tài khoản", "locale"=>"vi"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm3.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Cuong', 'cuongtm3.dev@gmail.com', '2022-01-20 05:32:48.183865', '2022-01-20 05:32:48.183865', '$2a$12$lIsAX6kHVQ8nxQTwmnXcv.iqy2uN6eOwElMlAD2YzvFlVtD43agXe', '$2a$12$Oz.nPzn3FHrKBuD3mCaREuaShIBkOVQKHKcUmI5SqqIn2aL7/uaYG')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 0.4ms | Allocations: 281)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 353)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.4ms | Allocations: 287)
+UserMailer#account_activation: processed outbound mail in 6.8ms
+Delivered mail 61e8f40063f4c_1417465015944@deft.mail (5125.8ms)
+Date: Thu, 20 Jan 2022 12:32:48 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm3.dev@gmail.com
+Message-ID: <61e8f40063f4c_1417465015944@deft.mail>
+Subject: =?UTF-8?Q?K=C3=ADch_ho=E1=BA=A1t_t=C3=A0i_kho=E1=BA=A3n?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8f4006233c_14174650158aa";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8f4006233c_14174650158aa
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Xin ch=C3=A0o Cuong,=0D
+=0D
+<span class=3D"translation_missing" title=3D"translation missing: vi.welc=
+ome_to">Welcome To</span> <span class=3D"translation_missing" title=3D"tr=
+anslation missing: vi.click_to_activate">Click To Activate</span>=0D
+http://localhost:3000/account_activations/Pii1Hokf5-95nt0R_IAGbA/edit?ema=
+il=3Dcuongtm3.dev%40gmail.com=0D
+
+----==_mimepart_61e8f4006233c_14174650158aa
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <p>Xin ch=C3=A0o Cuong,</p>=0D
+=0D
+<p><span class=3D"translation_missing" title=3D"translation missing: vi.w=
+elcome_to">Welcome To</span> <span class=3D"translation_missing" title=3D=
+"translation missing: vi.click_to_activate">Click To Activate</span> </p>=
+=0D
+=0D
+<a href=3D"http://localhost:3000/account_activations/Pii1Hokf5-95nt0R_IAG=
+bA/edit?email=3Dcuongtm3.dev%40gmail.com"><span class=3D"translation_miss=
+ing" title=3D"translation missing: vi.activate">Activate</span></a>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_61e8f4006233c_14174650158aa--
+
+Redirected to http://localhost:3000/vi
+Completed 302 Found in 5582ms (ActiveRecord: 7.9ms | Allocations: 18680)
+
+
+Started GET "/vi" for 127.0.0.1 at 2022-01-20 12:32:53 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 432)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7709)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 8745)
+
+
+Started GET "/account_activations/Pii1Hokf5-95nt0R_IAGbA/edit?email=cuongtm3.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:34:00 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"cuongtm3.dev@gmail.com", "id"=>"Pii1Hokf5-95nt0R_IAGbA"}
+  [1m[36mUser Load (40.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm3.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:3:in `edit'
+Redirected to http://localhost:3000/en/users/60
+Completed 302 Found in 284ms (ActiveRecord: 40.6ms | Allocations: 1423)
+
+
+Started GET "/en/users/60" for 127.0.0.1 at 2022-01-20 12:34:01 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"60"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 11.0ms | Allocations: 596)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 81.8ms | Allocations: 7570)
+Completed 200 OK in 101ms (Views: 83.9ms | ActiveRecord: 2.2ms | Allocations: 9460)
+
+
+Started GET "/vi/users/60" for 127.0.0.1 at 2022-01-20 12:34:14 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"60"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 603)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 7579)
+Completed 200 OK in 63ms (Views: 50.7ms | ActiveRecord: 1.0ms | Allocations: 9457)
+
+
+Started GET "/vi/users" for 127.0.0.1 at 2022-01-20 12:34:20 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 0.9ms | Allocations: 108)
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered users/index.html.erb within layouts/application (Duration: 28.4ms | Allocations: 2171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 53.4ms | Allocations: 9689)
+Completed 200 OK in 96ms (Views: 47.1ms | ActiveRecord: 17.7ms | Allocations: 11862)
+
+
+Started DELETE "/vi/logout" for 127.0.0.1 at 2022-01-20 12:34:30 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/vi/logout"):
+  
+Started GET "/vi/logout" for 127.0.0.1 at 2022-01-20 12:34:31 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/vi
+Completed 302 Found in 33ms (ActiveRecord: 0.5ms | Allocations: 1510)
+
+
+Started GET "/vi" for 127.0.0.1 at 2022-01-20 12:34:31 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 9.5ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 432)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 7689)
+Completed 200 OK in 62ms (Views: 57.0ms | ActiveRecord: 0.0ms | Allocations: 8705)
+
+
+Started GET "/vi/login" for 127.0.0.1 at 2022-01-20 12:34:34 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 236.4ms | Allocations: 6013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 441)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 261.7ms | Allocations: 13304)
+Completed 200 OK in 277ms (Views: 273.8ms | ActiveRecord: 0.0ms | Allocations: 14835)
+
+
+Started POST "/vi/login" for 127.0.0.1 at 2022-01-20 12:34:37 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm.dev@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mUser Update (12.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-20 05:34:37.476485', `users`.`remember_digest` = '$2a$12$6wX8F2zIuF0DGheYKz/2R.dmdG5rI0bcSS8yuRPiCykq8Ieq7xYdi' WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37:in `remember'
+Redirected to http://localhost:3000/vi/users/1
+Completed 302 Found in 498ms (ActiveRecord: 26.1ms | Allocations: 4337)
+
+
+Started GET "/vi/users/1" for 127.0.0.1 at 2022-01-20 12:34:37 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 618)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 275.5ms | Allocations: 7618)
+Completed 200 OK in 282ms (Views: 276.6ms | ActiveRecord: 0.5ms | Allocations: 9519)
+
+
+Started GET "/vi/users" for 127.0.0.1 at 2022-01-20 12:34:38 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (46.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 1.2ms | Allocations: 229)
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 1.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2903)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 3.7ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 10421)
+Completed 200 OK in 95ms (Views: 33.8ms | ActiveRecord: 48.2ms | Allocations: 12510)
+
+
+Started GET "/vi/users?page=8" for 127.0.0.1 at 2022-01-20 12:34:43 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"8", "locale"=>"vi"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 56[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 0.8ms | Allocations: 217)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered users/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1676)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 9212)
+Completed 200 OK in 61ms (Views: 36.9ms | ActiveRecord: 20.3ms | Allocations: 11281)
+
+
+Started GET "/vi/users?page=1" for 127.0.0.1 at 2022-01-20 12:34:47 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "locale"=>"vi"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (22.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered users/_user.html.erb (Duration: 1.5ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 2.2ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 1.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 198)
+  Rendered users/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 10402)
+Completed 200 OK in 68ms (Views: 36.0ms | ActiveRecord: 24.3ms | Allocations: 12481)
+
+
+Started DELETE "/vi/users/60" for 127.0.0.1 at 2022-01-20 12:34:50 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "locale"=>"vi", "id"=>"60"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 60 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 60[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/vi/users
+Completed 302 Found in 17ms (ActiveRecord: 4.4ms | Allocations: 3343)
+
+
+Started GET "/vi/users" for 127.0.0.1 at 2022-01-20 12:34:50 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 217)
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered users/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 10406)
+Completed 200 OK in 38ms (Views: 26.1ms | ActiveRecord: 6.0ms | Allocations: 12478)
+
+
+Started DELETE "/vi/users/56" for 127.0.0.1 at 2022-01-20 12:34:54 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "locale"=>"vi", "id"=>"56"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mUser Destroy (4.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 56[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/vi/users
+Completed 302 Found in 12ms (ActiveRecord: 7.2ms | Allocations: 3331)
+
+
+Started GET "/vi/users" for 127.0.0.1 at 2022-01-20 12:34:54 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (23.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered users/_user.html.erb (Duration: 1.1ms | Allocations: 198)
+  Rendered users/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 578)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 10406)
+Completed 200 OK in 59ms (Views: 27.2ms | ActiveRecord: 26.3ms | Allocations: 12488)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:47:37 +0700
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 171.6ms | Allocations: 175484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 94.1ms | Allocations: 9531)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 391.3ms | Allocations: 204054)
+Completed 200 OK in 406ms (Views: 328.5ms | ActiveRecord: 66.9ms | Allocations: 207379)
+
+
+Started GET "/en/users" for 127.0.0.1 at 2022-01-20 12:47:40 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[35m (15.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`created_at` DESC LIMIT 8 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/_user.html.erb (Duration: 1.1ms | Allocations: 426)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered users/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 582)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 11049)
+Completed 200 OK in 42ms (Views: 20.0ms | ActiveRecord: 17.9ms | Allocations: 13863)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:47:47 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1098)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 8361)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.5ms | Allocations: 9417)
+
+
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-20 12:47:49 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 1112)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 9777)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.3ms | Allocations: 11019)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:48:01 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong Hi", "email"=>"cuongtm1.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 762)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1983)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 1116)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 9964)
+Completed 200 OK in 281ms (Views: 22.9ms | ActiveRecord: 3.0ms | Allocations: 13785)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:48:57 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong Hi", "email"=>"cuongtm1.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 646)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.4ms | Allocations: 1846)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 10725)
+Completed 200 OK in 262ms (Views: 21.2ms | ActiveRecord: 14.1ms | Allocations: 20195)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:50:05 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Cuong Hi", "email"=>"cuongtm5.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm5.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (18.8ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Cuong Hi', 'cuongtm5.dev@gmail.com', '2022-01-20 05:50:05.813545', '2022-01-20 05:50:05.813545', '$2a$12$h.BGrPixt7SQxIgjkR1hm.TkCR6mPBJzgy5BHmKplAQchdkB6ebdi', '$2a$12$6aB.jDeznN1jjMAe04Et..PHNq409inUOu.MUkgAQaMXVKtcDbMim')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 3.2ms | Allocations: 485)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.0ms | Allocations: 657)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 1.9ms | Allocations: 348)
+  Rendered layout layouts/mailer.text.erb (Duration: 3.5ms | Allocations: 499)
+UserMailer#account_activation: processed outbound mail in 20.9ms
+Delivered mail 61e8f80e21dd0_23be46782682@deft.mail (5349.3ms)
+Date: Thu, 20 Jan 2022 12:50:06 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm5.dev@gmail.com
+Message-ID: <61e8f80e21dd0_23be46782682@deft.mail>
+Subject: Account ativation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8f80e1ee85_23be4678253f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8f80e1ee85_23be4678253f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Cuong Hi,
+
+<span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span>
+http://localhost:3000/account_activations/oxXsoGxmbr3kVBhbzO8VMg/edit?email=cuongtm5.dev%40gmail.com
+
+----==_mimepart_61e8f80e1ee85_23be4678253f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi Cuong Hi,</p>
+
+<p><span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span> </p>
+
+<a href="http://localhost:3000/account_activations/oxXsoGxmbr3kVBhbzO8VMg/edit?email=cuongtm5.dev%40gmail.com"><span class="translation_missing" title="translation missing: en.activate">Activate</span></a>
+
+  </body>
+</html>
+
+----==_mimepart_61e8f80e1ee85_23be4678253f--
+
+Redirected to http://localhost:3000/en
+Completed 302 Found in 5989ms (ActiveRecord: 98.9ms | Allocations: 32348)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:50:11 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 5.5ms | Allocations: 352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 8.7ms | Allocations: 1872)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 9206)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 0.7ms | Allocations: 10437)
+
+
+Started DELETE "/en/logout" for 127.0.0.1 at 2022-01-20 12:51:22 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/en/logout"):
+  
+Started GET "/en/logout" for 127.0.0.1 at 2022-01-20 12:51:24 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:48:in `forget'
+  [1m[36mUser Update (5.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-20 05:51:24.647192', `users`.`remember_digest` = NULL WHERE `users`.`id` = 1[0m
+  ↳ app/models/user.rb:48:in `forget'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:48:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 18ms (ActiveRecord: 8.6ms | Allocations: 3361)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:51:24 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 478)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7886)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 8948)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:51:27 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 436)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 8531)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 10066)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:51:37 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm5.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm5.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 212ms (ActiveRecord: 0.5ms | Allocations: 1676)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:51:37 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 2.0ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7699)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 8762)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:51:52 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 427)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 7953)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 8973)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:51:59 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm1.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm1.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 245ms (ActiveRecord: 0.5ms | Allocations: 1491)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:52:00 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 427)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 7697)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 8746)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:52:05 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 427)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 7953)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 8960)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:52:11 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm2.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm2.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 213ms (ActiveRecord: 0.3ms | Allocations: 1470)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:52:11 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 427)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 7679)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 8713)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:52:44 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 942)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 8580)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 9806)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:52:50 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm2.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm2.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 230ms (ActiveRecord: 8.2ms | Allocations: 7369)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:52:50 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 455)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 7682)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 8854)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:56:14 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 200.1ms | Allocations: 175480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.9ms | Allocations: 1372)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 277.9ms | Allocations: 193844)
+Completed 200 OK in 293ms (Views: 282.7ms | ActiveRecord: 0.0ms | Allocations: 197173)
+
+
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-20 12:56:23 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 459)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 9219)
+Completed 200 OK in 57ms (Views: 25.2ms | ActiveRecord: 17.2ms | Allocations: 17733)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:56:36 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Manh Cuong", "email"=>"cuongtm11.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm11.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (7.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Manh Cuong', 'cuongtm11.dev@gmail.com', '2022-01-20 05:56:36.777307', '2022-01-20 05:56:36.777307', '$2a$12$dmEcMcIgdYbDpfrNVzcdmeNT75xw9fxQbBzh1jfdISqofMPbL06tO', '$2a$12$4XA3rwp.BULAu59wVZbfpuzmnfBuFRWKVMF9IVgSQ7waif6rar/au')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 484)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.6ms | Allocations: 657)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 0.7ms | Allocations: 350)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.2ms | Allocations: 501)
+UserMailer#account_activation: processed outbound mail in 7.9ms
+Delivered mail 61e8f99556b0_29ec4588233fe@deft.mail (4968.1ms)
+Date: Thu, 20 Jan 2022 12:56:37 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm11.dev@gmail.com
+Message-ID: <61e8f99556b0_29ec4588233fe@deft.mail>
+Subject: Account ativation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8f995464c_29ec4588232e7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8f995464c_29ec4588232e7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Manh Cuong,
+
+<span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span>
+http://localhost:3000/account_activations/My1vyqIjxov7G8U8kcO2Sg/edit?email=cuongtm11.dev%40gmail.com
+
+----==_mimepart_61e8f995464c_29ec4588232e7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi Manh Cuong,</p>
+
+<p><span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span> </p>
+
+<a href="http://localhost:3000/account_activations/My1vyqIjxov7G8U8kcO2Sg/edit?email=cuongtm11.dev%40gmail.com"><span class="translation_missing" title="translation missing: en.activate">Activate</span></a>
+
+  </body>
+</html>
+
+----==_mimepart_61e8f995464c_29ec4588232e7--
+
+Redirected to http://localhost:3000/en
+Completed 302 Found in 5434ms (ActiveRecord: 18.1ms | Allocations: 27064)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:56:41 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 438)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 7702)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 8737)
+
+
+Started GET "/account_activations/My1vyqIjxov7G8U8kcO2Sg/edit?email=cuongtm11.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:56:51 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"cuongtm11.dev@gmail.com", "id"=>"My1vyqIjxov7G8U8kcO2Sg"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm11.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:3:in `edit'
+  [1m[36mUser Update (4.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`activated` = TRUE, `users`.`activated_at` = '2022-01-20 05:56:51' WHERE `users`.`id` = 62[0m
+  ↳ app/models/user.rb:52:in `activate'
+Redirected to http://localhost:3000/en/users/62
+Completed 302 Found in 245ms (ActiveRecord: 6.8ms | Allocations: 2184)
+
+
+Started GET "/en/users/62" for 127.0.0.1 at 2022-01-20 12:56:51 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"62"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 689)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7821)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 0.5ms | Allocations: 9962)
+
+
+Started DELETE "/en/logout" for 127.0.0.1 at 2022-01-20 12:56:58 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/en/logout"):
+  
+Started GET "/en/logout" for 127.0.0.1 at 2022-01-20 12:57:01 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1702)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:57:01 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 441)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 7850)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 8912)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:57:05 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 436)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8528)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 10064)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:57:11 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm11.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm11.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm11.dev@gmail.com' AND `users`.`id` != 62 LIMIT 1[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mUser Update (5.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-20 05:57:12.353102', `users`.`remember_digest` = '$2a$12$urPuTAs4bBrwSII6iEUrKuZ8u8K3IcTCfY7DYNMiIhW0biNJr/9fu' WHERE `users`.`id` = 62[0m
+  ↳ app/models/user.rb:37:in `remember'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37:in `remember'
+Redirected to http://localhost:3000/en/users/62
+Completed 302 Found in 442ms (ActiveRecord: 15.0ms | Allocations: 4459)
+
+
+Started GET "/en/users/62" for 127.0.0.1 at 2022-01-20 12:57:12 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"62"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 613)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7597)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.3ms | Allocations: 9509)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:58:14 +0700
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 102.1ms | Allocations: 175481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 40.5ms | Allocations: 9417)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 185.2ms | Allocations: 201890)
+Completed 200 OK in 197ms (Views: 168.9ms | ActiveRecord: 18.1ms | Allocations: 205212)
+
+
+Started GET "/logout" for 127.0.0.1 at 2022-01-20 12:58:21 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 62 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:48:in `forget'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2022-01-20 05:58:21.486120', `users`.`remember_digest` = NULL WHERE `users`.`id` = 62[0m
+  ↳ app/models/user.rb:48:in `forget'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:48:in `forget'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 14ms (ActiveRecord: 6.2ms | Allocations: 3326)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:58:21 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 477)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 7735)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 8758)
+
+
+Started GET "/en/signup" for 127.0.0.1 at 2022-01-20 12:58:24 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 185)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 459)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 9127)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 10819)
+
+
+Started POST "/en/users" for 127.0.0.1 at 2022-01-20 12:58:37 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Manh Cuong", "email"=>"cuongtm12.dev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'cuongtm12.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('Manh Cuong', 'cuongtm12.dev@gmail.com', '2022-01-20 05:58:37.612915', '2022-01-20 05:58:37.612915', '$2a$12$Lm3ES9gWQz7FhmIYP5hR4O56zfdiN.aJE1pADAV6fXfV2hsDLDKCe', '$2a$12$qBXs7KqEiJvoJ/R/khFMUOibAvsaSiexchJwPxRM82v1Fe4q0CbrW')[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 1.4ms | Allocations: 484)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.8ms | Allocations: 656)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (Duration: 0.9ms | Allocations: 350)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.7ms | Allocations: 501)
+UserMailer#account_activation: processed outbound mail in 11.0ms
+Delivered mail 61e8fa0dcf9e1_2c7e3a5c50921@deft.mail (4357.7ms)
+Date: Thu, 20 Jan 2022 12:58:37 +0700
+From: tran.manh.cuong@sun-asterisk.com
+To: cuongtm12.dev@gmail.com
+Message-ID: <61e8fa0dcf9e1_2c7e3a5c50921@deft.mail>
+Subject: Account ativation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61e8fa0dcec5c_2c7e3a5c5083b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61e8fa0dcec5c_2c7e3a5c5083b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Manh Cuong,
+
+<span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span>
+http://localhost:3000/account_activations/-RNzkTlGQ4iUVAO6in8DOQ/edit?email=cuongtm12.dev%40gmail.com
+
+----==_mimepart_61e8fa0dcec5c_2c7e3a5c5083b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi Manh Cuong,</p>
+
+<p><span class="translation_missing" title="translation missing: en.welcome_to">Welcome To</span> <span class="translation_missing" title="translation missing: en.click_to_activate">Click To Activate</span> </p>
+
+<a href="http://localhost:3000/account_activations/-RNzkTlGQ4iUVAO6in8DOQ/edit?email=cuongtm12.dev%40gmail.com"><span class="translation_missing" title="translation missing: en.activate">Activate</span></a>
+
+  </body>
+</html>
+
+----==_mimepart_61e8fa0dcec5c_2c7e3a5c5083b--
+
+Redirected to http://localhost:3000/en
+Completed 302 Found in 4829ms (ActiveRecord: 8.5ms | Allocations: 30576)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:58:42 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7698)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 8729)
+
+
+Started GET "/account_activations/-RNzkTlGQ4iUVAO6in8DOQ/edit?email=cuongtm12.dev%40gmail.com" for 127.0.0.1 at 2022-01-20 12:58:50 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"cuongtm12.dev@gmail.com", "id"=>"-RNzkTlGQ4iUVAO6in8DOQ"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm12.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:3:in `edit'
+  [1m[36mUser Update (5.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`activated` = TRUE, `users`.`activated_at` = '2022-01-20 05:58:51' WHERE `users`.`id` = 63[0m
+  ↳ app/models/user.rb:52:in `activate'
+Redirected to http://localhost:3000/en/users/63
+Completed 302 Found in 251ms (ActiveRecord: 7.0ms | Allocations: 2064)
+
+
+Started GET "/en/users/63" for 127.0.0.1 at 2022-01-20 12:58:51 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"63"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 611)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 7741)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 9768)
+
+
+Started GET "/logout" for 127.0.0.1 at 2022-01-20 12:59:00 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1521)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:59:00 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 438)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 7701)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 8726)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:59:03 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 436)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 8500)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 10013)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:59:10 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm12.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm12.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en/users/63
+Completed 302 Found in 216ms (ActiveRecord: 0.5ms | Allocations: 1473)
+
+
+Started GET "/en/users/63" for 127.0.0.1 at 2022-01-20 12:59:10 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"63"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:72:in `find_user_by_id'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 611)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 7590)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.5ms | Allocations: 9478)
+
+
+Started GET "/logout" for 127.0.0.1 at 2022-01-20 12:59:18 +0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 63 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 1495)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:59:18 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 437)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 7714)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 8738)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2022-01-20 12:59:21 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 427)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7953)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 8977)
+
+
+Started POST "/en/login" for 127.0.0.1 at 2022-01-20 12:59:29 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cuongtm5.dev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cuongtm5.dev@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/en
+Completed 302 Found in 216ms (ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/en" for 127.0.0.1 at 2022-01-20 12:59:29 +0700
+Processing by StaticPagesController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 428)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 7684)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 8737)
+
+

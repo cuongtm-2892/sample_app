@@ -22,6 +22,12 @@ en:
   news: "News"
   michael_hartl: " - Michael Hartl"
   remember_me: "Remember me?"
+  hi: "Hi"
+  check_your_mail: "Check your email please"
+  email_title: "Account ativation"
+  acount_not_activated: "Account not activated"
+  activated: "Account activated"
+  activate_failed: "Account activated failed"
   app:
     title: "Sample App"
   home:
