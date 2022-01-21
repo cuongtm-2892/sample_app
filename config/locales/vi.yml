@@ -22,6 +22,12 @@ vi:
   news: "Tin Tức"
   michael_hartl: " - Michael Hartl"
   remember_me: "Ghi nhớ người dùng?"
+  hi: "Xin chào"
+  check_your_mail: "Hãy kiểm tra email của bạn"
+  email_title: "Kích hoạt tài khoản"
+  acount_not_activated: "Tài khoản chưa xác thực, vui lòng xác thực qua email"
+  activated: "Kích hoạt thành công"
+  activate_failed: "Kích hoạt tài khoản thất bại"
   app:
     title: "Ứng dụng mẫu"
   home:
